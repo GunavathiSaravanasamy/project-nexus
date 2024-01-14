@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+ body{
+    height: 100vh;
+ } 
+ .form-group input{
+    padding: 10px 20px;
+    display: block;
+    margin-top: 10px;
+    border: none;
+ }
+ form a{
+    color: black;
+    font-size: 13px;
+ }
+form .button{
+    padding: 10px 15px;
+    align-items: center;
+    font-size: 13px;
+ }
+</style>
+<body>
+    <div class="heading">
+    <h3> Login Here....</h3>
+    </div>
+<div class="divcenter">
+    <form  method="POST" class="box" action="login.php">
+        <div class="form-group">
+            <label for="email" ></label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+            <?php
+                if (isset($errorMessage)) {
+                    echo '<div class="alert alert-danger" role="alert">' . $errorMessage . '</div>';
+                } 
+?>
+        </div>
+           
+        <div class="form-group">
+            <label for="password"></label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+            <?php
+                if (isset($errorMessage)) {
+                    echo '<div class="alert alert-danger" role="alert">' . $errorMessage . '</div>';
+                } 
+?>
+        </div>
+        <button class="button" type="submit" name="Login" required>Login
+        </button>
+        <a href="index.php">Don't have an account?</a>
+    </form>
+</div> 
+</body>
+</html>
